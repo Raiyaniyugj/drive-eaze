@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DriveEase - Premium Driver Booking Platform
 
-## Getting Started
+DriveEase is a marketplace where people hire verified drivers by the hour, day, week, or month. Built with a premium, trustworthy design matching a luxury concierge service.
 
-First, run the development server:
+## Tech Stack
+- **Framework**: Next.js 14 (App Router) + TypeScript
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Charts**: Recharts
+- **Data**: Mock JSON in `src/data/drivers.json`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Setup Instructions
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Open the application:**
+   Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Pages Overview
+- `/` - Landing page with booking widget, pricing, and safety features.
+- `/search` - Driver search results with filters (mocked).
+- `/driver/[id]` - Driver profile and booking calculator.
+- `/book/[id]` - Multi-step booking flow and mock payment.
+- `/dashboard` - Customer dashboard with live tracking and booking history.
+- `/driver-application` - Driver benefits and multi-step onboarding form.
+- `/login` - Role selection and phone OTP flow.
+- `/admin` - Admin KPIs, revenue charts, and driver approval queues.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Next Steps (Backend Integration)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To take this from a frontend prototype to a production app, here is the list of services you need to connect next:
 
-## Deploy on Vercel
+### 1. Database & Authentication (Supabase / PostgreSQL)
+- **Replace Mock Data:** Replace `src/data/drivers.json` with API calls to your database.
+- **Data Models needed:** `Users` (Customers & Admins), `Drivers` (Profile, Verification Docs), `Bookings` (Status, Timestamps, Pricing), `Reviews`.
+- **Auth:** Implement Supabase Auth or NextAuth.js to handle the session.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. SMS OTP & Phone Verification
+- **Integration:** Connect an SMS gateway like **Twilio**, **MessageBird**, or **Firebase Auth** (Phone) in the `/login` flow.
+- Ensure OTP rate limiting and verification endpoints are secured.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 3. Payments (Razorpay)
+- **Integration:** Integrate Razorpay SDK in the final step of `/book/[id]`.
+- Implement Razorpay webhooks on the backend to update the booking status from `pending` to `confirmed`.
+
+### 4. Maps & Location (Google Maps API / Mapbox)
+- **Landing Widget:** Implement Google Places Autocomplete for Pickup/Drop locations.
+- **Search Page:** Replace the map placeholder in the map view with an interactive map showing driver pins.
+- **Dashboard Tracking:** Use Google Maps Directions API to show the live route and simulated/actual live GPS coordinates of the driver.
+
+### 5. File Storage
+- Connect an S3 bucket or Supabase Storage for the driver document uploads (Aadhaar, License, Profile Photo) in the `/driver-application` flow.
+
+### 6. Forms & Validation
+- Implement `react-hook-form` and `zod` for strict validation on the driver application and booking forms to ensure data integrity before sending to the backend.

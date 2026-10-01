@@ -1,0 +1,86 @@
+[
+  {
+    "id": "1",
+    "name": "Rahul Sharma",
+    "photo": "https://i.pravatar.cc/150?img=11",
+    "rating": 4.9,
+    "trips": 1240,
+    "experience": "8 years",
+    "languages": ["English", "Hindi", "Marathi"],
+    "badges": ["Top Rated", "Police Verified"],
+    "pricePerHour": 149,
+    "pricePerDay": 1299,
+    "vehicleTypes": ["Sedan", "SUV", "Luxury"],
+    "transmission": ["Manual", "Automatic"],
+    "verified": true,
+    "bio": "Professional chauffeur with over 8 years of experience driving luxury cars. Excellent route knowledge of Mumbai and surrounding areas. Always punctual and courteous.",
+    "licenseClass": "LMV-TR",
+    "reviews": {
+      "total": 342,
+      "breakdown": { "5": 300, "4": 30, "3": 10, "2": 2, "1": 0 }
+    }
+  },
+  {
+    "id": "2",
+    "name": "Amit Kumar",
+    "photo": "https://i.pravatar.cc/150?img=12",
+    "rating": 4.7,
+    "trips": 850,
+    "experience": "5 years",
+    "languages": ["Hindi", "English"],
+    "badges": ["Police Verified"],
+    "pricePerHour": 129,
+    "pricePerDay": 999,
+    "vehicleTypes": ["Hatchback", "Sedan"],
+    "transmission": ["Manual"],
+    "verified": true,
+    "bio": "Safe and reliable driver, perfect for daily office commutes and running errands. Calm under heavy traffic conditions.",
+    "licenseClass": "LMV",
+    "reviews": {
+      "total": 128,
+      "breakdown": { "5": 90, "4": 25, "3": 10, "2": 3, "1": 0 }
+    }
+  },
+  {
+    "id": "3",
+    "name": "Vikram Singh",
+    "photo": "https://i.pravatar.cc/150?img=15",
+    "rating": 4.8,
+    "trips": 2100,
+    "experience": "12 years",
+    "languages": ["English", "Hindi", "Punjabi"],
+    "badges": ["Top Rated", "Outstation Specialist", "Police Verified"],
+    "pricePerHour": 199,
+    "pricePerDay": 1499,
+    "vehicleTypes": ["SUV", "Luxury"],
+    "transmission": ["Manual", "Automatic"],
+    "verified": true,
+    "bio": "Specialist in outstation trips and long drives. I prioritize passenger safety and comfort above all else. Extensive experience driving on highways.",
+    "licenseClass": "HMV/LMV",
+    "reviews": {
+      "total": 512,
+      "breakdown": { "5": 450, "4": 50, "3": 10, "2": 1, "1": 1 }
+    }
+  },
+  {
+    "id": "4",
+    "name": "Suresh Patel",
+    "photo": "https://i.pravatar.cc/150?img=18",
+    "rating": 4.6,
+    "trips": 420,
+    "experience": "3 years",
+    "languages": ["Hindi", "Gujarati"],
+    "badges": ["Police Verified"],
+    "pricePerHour": 119,
+    "pricePerDay": 899,
+    "vehicleTypes": ["Hatchback"],
+    "transmission": ["Manual"],
+    "verified": true,
+    "bio": "Enthusiastic and polite driver. Great for local city driving and navigating narrow lanes.",
+    "licenseClass": "LMV",
+    "reviews": {
+      "total": 85,
+      "breakdown": { "5": 60, "4": 15, "3": 5, "2": 5, "1": 0 }
+    }
+  }
+]
